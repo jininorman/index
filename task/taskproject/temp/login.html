@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<div class="container py-5">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{login_form.as_p}}
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="text_center">If you already have no account,<a href="register">Register</a></p>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+</div>
+</body>
+</html>
